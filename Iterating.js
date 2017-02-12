@@ -119,31 +119,31 @@ var movieList = require("movieList");
 
 var Movies = React.createClass({
 
-	getInitialState: function() {
-		return {
-			list: null 
-		};
-	},
-	componentWillMount: function() {
-		var movies = movieList.getMovie();
-		this.setState({
-			list: movies
-		});		
-	},
-	render: function() {
-		return (
-			<div>
-				{this.state.list.map(function(item) {
-					return (
-						<div key = {item.id}>
-							<div>Name: {item.title}</div>
-							<div>Rating: {item.jezici}</div>
-						</div>
-					)
-				})}
-			</div>
-		);
-	}
+  getInitialState: function() {
+    return {
+      list: null 
+    };
+  },
+  componentWillMount: function() {
+    var movies = movieList.getMovie();
+    this.setState({
+      list: movies
+    });		
+  },
+  render: function() {
+    return (
+      <div>
+        {this.state.list.map(function(item) {
+          return (
+            <div key = {item.id}>
+              <div>Name: {item.title}</div>
+              <div>Rating: {item.jezici}</div>
+            </div>
+          )
+        })}
+      </div>
+    );
+  }
 });
 
 module.exports=Movies;
@@ -202,7 +202,7 @@ var response = [
 ]
 
 module.exports = {
-	getMovie: function() {
-		return response;
-	}
+  getMovie: function() {
+    return response;
+  }
 }
